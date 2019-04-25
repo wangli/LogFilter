@@ -1,0 +1,75 @@
+{
+  "name": "LogParse",
+  "version": "0.1.0",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "electron .",
+    "pkg": "electron-packager . LogParse --platform=win32 --arch=x64 --icon=icon.ico --out=./out --asar --app-version=0.0.1",
+    "builder":"electron-builder --platform=win32"
+  },
+  "build": {
+    "appId": "com.yangwl.logparse",
+    "copyright": "wangli",
+    "productName": "LogParse",
+    "directories": {
+      "output": "./pkg"
+    },
+    "dmg": {
+      "window": {
+        "x": 100,
+        "y": 100,
+        "width": 800,
+        "height": 600
+      }
+    },
+    "win": {
+      "target": ["nsis", "zip"],
+      "icon": "icon.ico"
+    }
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vuex": "^3.1.0"
+  },
+  "devDependencies": {
+    "electron": "^4.1.4",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
+    "babel-eslint": "^10.0.1",
+    "electron-builder": "^20.39.0",
+    "electron-packager": "^13.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
