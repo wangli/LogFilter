@@ -22,6 +22,9 @@
     cursor: pointer;
     box-shadow: 0px 3px rgba(0, 0, 0, 0.2);
   }
+  .button.loadFile{
+    right: 60px;
+  }
   .button:focus {
     outline: 0px;
   }
@@ -38,8 +41,11 @@
       width:100px;
       height: 100px;
       right:calc(50% - 50px);
-      top:calc(40% - 100px);
+      top:calc(40% - 180px);
       font-size: 18px;
+  }
+  .button.loadFile.isempty{
+    top:calc(40% - 50px);
   }
   .button.title{
     top: 20px;
@@ -47,6 +53,60 @@
     background: #6c9793;
     border-radius: 5px;
     height: 30px;
+  }
+  .sltAttr, #modal,#loaidng{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.9)
+  }
+  .sltAttr .spn{
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    background-color: #e3e3ff;
+    border: #babad4 1px solid;
+    color: #414164;
+    cursor: pointer;
+  }
+  .sltAttr .spn:hover{
+    background-color: #d6d6f5;
+  }
+  .jsonContent{
+    margin: 5px;
+    padding:5px;
+    background-color: #f1e6df;
+  }
+  .jsonContent .title{
+    color: #ff4848;
+  }
+  #modal input{
+    height: 28px;
+    width: 500px;
+    margin: 2px;
+    margin-right: 0;
+    padding: 2px;
+    border: 1px #414164 solid;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  #modal button{
+    height: 28px;
+    width: 50px;
+    margin: 2px;
+    margin-left: 0;
+    padding: 2px;
+    border: 1px #414164 solid;
+    box-sizing: border-box;
+    vertical-align: middle;
+    background-color: #414164;
+    color: #f1f1ff;
   }
   .content{
     position: absolute;
@@ -133,4 +193,35 @@
     color: #999;
     text-align: right;
     border-left: 1px #eee solid;
+  }
+  .reselect{
+    margin: 5px 0 5px 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    line-height: 18px;
+  }
+  .reselect:hover{
+    background-color: #e1e1f8;
+  }
+  .loading{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    animation: loading 1s linear infinite;
+    -webkit-animation: loading 1s linear infinite;
+  }
+  @keyframes loading
+  {
+    from {transform:rotate(0);-webkit-transform:rotate(0)}
+    to {transform:rotate(360deg);-webkit-transform:rotate(360deg)}
+  }
+
+  @-webkit-keyframes loading 
+  {
+    from {transform:rotate(0);-webkit-transform:rotate(0)}
+    to {transform:rotate(360deg);-webkit-transform:rotate(360deg)}
   }
